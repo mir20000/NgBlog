@@ -10,13 +10,13 @@ const backendURL = "http://localhost:7000" + '/user';
   providedIn: 'root',
 })
 export class AccountserviceService {
-  private isAuthenticated = false;
-  private token: string | null = null;
-  private tokenTimer: any;
-  private userId: string | null = '';
-  private authStatusListener = new Subject<boolean>();
+  public isAuthenticated = false;
+  public token: string | null = null;
+  public tokenTimer: any;
+  public userId: string | null = '';
+  public authStatusListener = new Subject<boolean>();
   public err = new BehaviorSubject<any>(null);
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(public http: HttpClient, public router: Router) {}
 
   getToken() {
     return this.token;
@@ -123,7 +123,7 @@ export class AccountserviceService {
     }
   }
 
-  private getAuthData() {
+  public getAuthData() {
     const token = localStorage.getItem('token');
     const expirationDate = localStorage.getItem('expiration');
     const userId = localStorage.getItem('userId');
@@ -136,19 +136,19 @@ export class AccountserviceService {
       userId: userId,
     };
   }
-  private setAuthTimer(duration: number) {
+  public setAuthTimer(duration: number) {
     this.tokenTimer = setTimeout(() => {
       this.signOut();
     }, duration * 1000);
   }
-  private setAuthData(token: string, duration: Date, userId: string | null) {
+  public setAuthData(token: string, duration: Date, userId: string | null) {
     localStorage.setItem('token', token);
     localStorage.setItem('expiration', duration.toISOString());
     if (userId) {
       localStorage.setItem('userId', userId);
     }
   }
-  private clearAuthData() {
+  public clearAuthData() {
     localStorage.removeItem('token');
     localStorage.removeItem('expiration');
     localStorage.removeItem('userId');

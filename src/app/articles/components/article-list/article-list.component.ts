@@ -14,8 +14,8 @@ export class ArticleListComponent implements OnInit{
   isloading = false;
   error: any;
   userId: string = '';
-  private articleSub: Subscription = new Subscription();
-  constructor(private articleServices: ArticlesService) {}
+  public articleSub: Subscription = new Subscription();
+  constructor(public articleServices: ArticlesService) {}
 
   ngOnInit(): void {
     this.isloading = true;

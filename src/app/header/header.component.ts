@@ -8,10 +8,10 @@ import { AccountserviceService } from '../account/services/accountservice.servic
 })
 export class HeaderComponent implements OnInit {
   isLoggedIn: boolean = false;
-  private authListenersSubs?: Subscription;
-  private userId: any;
+  public authListenersSubs?: Subscription;
+  public userId: any;
   userName: any;
-  constructor(private accountService: AccountserviceService) {}
+  constructor(public accountService: AccountserviceService) {}
 
   ngOnInit(): void {
     this.isLoggedIn = this.accountService.getIsAuth();

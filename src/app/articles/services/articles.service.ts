@@ -12,10 +12,10 @@ const backendURL = "http://localhost:7000"+'/post';
   providedIn: 'root'
 })
 export class ArticlesService {
-  private articles:Articles[]=[]
-  private articlesUpdate = new Subject<Articles[]>();
+  public articles:Articles[]=[]
+  public articlesUpdate = new Subject<Articles[]>();
   public err = new BehaviorSubject<any>(null);
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(public http: HttpClient, public router: Router) { }
 
   getArticleUpdateListener() {
     return this.articlesUpdate.asObservable();

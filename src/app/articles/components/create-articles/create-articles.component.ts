@@ -15,13 +15,13 @@ export class CreateArticlesComponent implements OnInit {
   isLoading: boolean = false;
   imagePreview: string = '';
   article: Articles | undefined;
-  private mode = 'create';
-  private url ="" 
-  private articleId: string | null = '';
+  public mode = 'create';
+  public url ="" 
+  public articleId: string | null = '';
   constructor(
-    private articleServices: ArticlesService,
+    public articleServices: ArticlesService,
     public route: ActivatedRoute, 
-    private router: Router
+    public router: Router
   ) {}
 
   ngOnInit(): void {

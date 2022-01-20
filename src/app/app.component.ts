@@ -11,7 +11,7 @@ export class AppComponent {
   constructor(
     public router: Router,
 
-    private accountService: AccountserviceService
+    public accountService: AccountserviceService
   ) {}
   title = 'frontend';
   ngOnInit(): void {

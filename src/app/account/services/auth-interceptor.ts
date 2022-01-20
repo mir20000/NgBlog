@@ -9,7 +9,7 @@ import {
   
   @Injectable()
   export class AuthInterceptor implements HttpInterceptor {
-    constructor(private authService: AccountserviceService) { }
+    constructor(public authService: AccountserviceService) { }
   
     intercept(req: HttpRequest<any>, next: HttpHandler) {
   

@@ -12,7 +12,7 @@ export class RegistrationComponent implements OnInit {
   isLoading = false;
   error: any = null;
 
-  constructor(private authService: AccountserviceService) { }
+  constructor(public authService: AccountserviceService) { }
 
   ngOnInit(): void {
     this.error= null;
