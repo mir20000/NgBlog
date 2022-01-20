@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { Users } from '../model/user.model';
 import { environment } from '../../../environments/environment';
-const backendURL = environment.apiURL + '/user';
+const backendURL = "http://localhost:7000" + '/user';
 
 @Injectable({
   providedIn: 'root',

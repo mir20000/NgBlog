@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import {map}from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
 
-const backendURL = environment.apiURL+'/post';
+const backendURL = "http://localhost:7000"+'/post';
 
 @Injectable({
   providedIn: 'root'
