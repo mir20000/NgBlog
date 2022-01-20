@@ -4,7 +4,6 @@ import {HttpClient} from '@angular/common/http';
 import { BehaviorSubject,Subject } from 'rxjs';
 import { Router } from '@angular/router';
 import {map}from 'rxjs/operators';
-import { environment } from '../../../environments/environment';
 
 const backendURL = "http://localhost:7000"+'/post';
 
